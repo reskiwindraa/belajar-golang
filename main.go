@@ -323,21 +323,100 @@ func main() {
 		}
 		
 		/* A.13.8. Seleksi Kondisi Bersarang */
-		var point7 = 6
+		var point7 = 10
 		
-		if point7 <7  {
+		if point7 < 7 {
 			switch point7 {
 			case 10 :
 				fmt.Println("perfect")
-				default :
-				fmt.Println("nice try")
+			default :
+				fmt.Println("nice")
 			}
-		} else {
-			if point7 == 7 {
-				fmt.Println("not bad")
-		} else if point7 == 8 {
-				fmt.Println("awesome")
+			} else {
+				switch point7 {
+case 5:
+					fmt.Println("not bad")
+			case 3:
+					fmt.Println("keep trying")
+			default:
+				fmt.Println("you can do it")
+				if point7 == 0 {
+					fmt.Println("try harder!")
+				}
+			}
 		}
+
+	/* A.14. Perulangan */
+		/* A.14.1. Perulangan Menggunakan Keyword for */
+		/* for i :=0; i < 5; i++ { //perulangan dari 0 sampai 4
+			fmt.Printf("Perulangan ke-%d \n", i) // menampilkan nilai i
 		}
-		
+ */
+		/* A.14.2. Penggunaan Keyword for Dengan Argumen Hanya Kondisi */
+		/* var i = 1
+
+		for i < 5 {
+			fmt.Println("Angka", i)
+			i++
+		} */
+
+		/* A.14.3. Penggunaan Keyword for Tanpa Argumen */
+		/* var d = 0
+		for {
+			fmt.Println("angka", d)
+
+			d++
+			if d == 10 {
+				break
+			}
+		} */
+
+		/* A.14.4. Penggunaan Keyword for - range */
+		/* var xs = "123"  // string dengan value "123"
+
+		for i, v := range xs {
+			fmt.Println("index =", i, "Value =", v)
+		}
+
+		var ys = [5]int{10,20,30,40,50} // array of int dengan 5 elemen
+
+		for _, v := range ys {
+			fmt.Println("Value =", v)
+		}
+
+		var zs = ys[0:2] // slice dari array ys, dimulai dari index 0 sampai 2 (tidak termasuk index 2)
+
+		for _, v := range zs {
+			fmt.Println("value =", v)
+		}
+
+
+		var kvs = map[byte]int{'a':0, 'b':1, 'c':2} //map dengan key bertipe byte dan value bertipe int
+		for k, v := range kvs {
+			fmt.Println("key=", k, "value=", v)
+		}
+
+		// boleh juga baik k dan atau v nya diabaikan
+		for range kvs {
+			fmt.Println("Done")
+		}
+
+		// selain itu, bisa juga dengan cukup menentukan nilai numerik perulangan
+		for ii := range 5 {
+			fmt.Print(ii)
+		} */
+			
+		/* A.14.5. Penggunaan Keyword break & continue */
+		for i := 1; i <= 10; i++ {
+			if i % 2 == 1 {
+				continue // melewati perulangan jika i adalah bilangan ganjil
+			}
+			if i < 8 {
+				break // menghentikan perulangan jika i kurang dari 8
+			}
+			fmt.Println("Angka", i)
+		}
+
+
+
 }
